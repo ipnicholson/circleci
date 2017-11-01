@@ -1,8 +1,13 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/node:latest-browsers
-     steps:
-       - checkout
-       - run: echo "hello world"
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+      - run:
+          name: Print the Current Time
+          command: date
